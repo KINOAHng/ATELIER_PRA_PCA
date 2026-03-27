@@ -262,13 +262,14 @@ Difficulté : Moyenne (~2 heures)
 * last_backup_file : nom du dernier backup présent dans /backup
 * backup_age_seconds : âge du dernier backup
 
-*..**Déposez ici une copie d'écran** de votre réussite..*
+<img width="982" height="281" alt="image" src="https://github.com/user-attachments/assets/550bb868-c69a-42cf-a726-6e0c9fc175e6" />
+
 
 ---------------------------------------------------
 ### **Atelier 2 : Choisir notre point de restauration**  
 Aujourd’hui nous restaurobs “le dernier backup”. Nous souhaitons **ajouter la capacité de choisir un point de restauration**.
 
-*..Décrir ici votre procédure de restauration (votre runbook)..*  
+
   
 ---------------------------------------------------
 Evaluation
