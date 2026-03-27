@@ -229,29 +229,28 @@ Difficulté : Moyenne (~45 minutes)
 Faites preuve de pédagogie et soyez clair dans vos explications et procedures de travail.  
 
 **Exercice 1 :**  
-Quels sont les composants dont la perte entraîne une perte de données ?  
-  
-*..Répondez à cet exercice ici..*
+Quels sont les composants dont la perte entraîne une perte de données ?
+
+La perte du PVC pra-data entraîne une perte des données de production, car il contient la base SQLite. La perte du PVC pra-backup entraîne la perte des sauvegardes et empêche toute restauration.
 
 **Exercice 2 :**  
 Expliquez nous pourquoi nous n'avons pas perdu les données lors de la supression du PVC pra-data  
   
-*..Répondez à cet exercice ici..*
+Nous n’avons pas perdu définitivement les données, car elles avaient été sauvegardées automatiquement dans pra-backup toutes les minutes. Après la suppression de pra-data, il a donc été possible de restaurer la base depuis ce volume de sauvegarde.
 
 **Exercice 3 :**  
-Quels sont les RTO et RPO de cette solution ?  
-  
-*..Répondez à cet exercice ici..*
+Quels sont les RTO et RPO de cette solution ?
+
+  Le RTO est de quelques secondes pour un crash de pod et de quelques minutes pour une perte du volume pra-data. Le RPO est d’environ 1 minute, car une sauvegarde est réalisée chaque minute.
 
 **Exercice 4 :**  
 Pourquoi cette solution (cet atelier) ne peux pas être utilisé dans un vrai environnement de production ? Que manque-t-il ?   
   
-*..Répondez à cet exercice ici..*
+Cette solution n’est pas adaptée à la production, car elle utilise SQLite, une restauration manuelle et des sauvegardes stockées dans le même environnement. Il manque une vraie base de données de production, des sauvegardes externalisées et une architecture plus résiliente.
   
 **Exercice 5 :**  
 Proposez une archtecture plus robuste.   
-  
-*..Répondez à cet exercice ici..*
+Une architecture plus robuste utiliserait plusieurs pods Flask, une base PostgreSQL, des sauvegardes vers un stockage externe et éventuellement un second site ou cluster de secours. Cela permettrait de mieux résister aux pannes et de restaurer les données plus facilement
 
 ---------------------------------------------------
 Séquence 6 : Ateliers  
